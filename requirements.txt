@@ -1,0 +1,22 @@
+# initial dependency
+fastapi
+uvicorn
+
+# database
+pyscopg2
+sqlalchemy
+
+# load env files
+python-dotenv
+
+# email validation
+pydantic[email]
+
+# pass validation
+passlib[bycrypt]
+
+# pytest 
+pytest
+requests
+httpx
+
