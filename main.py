@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from router import base
+from core.config import settings
 
 app = FastAPI()
 
@@ -11,6 +12,7 @@ async def hello():
 
 def configuration():
     router_config()
+    
     pass
 
 def router_config():
