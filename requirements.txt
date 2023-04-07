@@ -3,8 +3,9 @@ fastapi
 uvicorn
 
 # database
-pyscopg2
+psycopg2
 sqlalchemy
+sqlmodel
 
 # load env files
 python-dotenv

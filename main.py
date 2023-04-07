@@ -2,22 +2,21 @@ from fastapi import FastAPI
 import uvicorn
 from router import base
 from core.config import settings
+from db.base import Base
+from db.session import engine
+
 
 app = FastAPI()
 
-@app.get("/")
-async def hello():
-    return {"Hello":"User"}
-    
-
 def configuration():
     router_config()
-    
-    pass
+    create_table()
 
 def router_config():
     app.include_router(base.router)
 
+def create_table():
+    Base.metadata.create_all(engine)
 
 if __name__ == '__main__':
     configuration()
@@ -26,4 +25,8 @@ else:
     configuration()
     
 
-
+@app.get("/")
+async def hello():
+    print()
+    return {"Hello":"User"}
+    
