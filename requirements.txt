@@ -21,3 +21,5 @@ pytest
 requests
 httpx
 
+#token
+python-jose

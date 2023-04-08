@@ -25,7 +25,8 @@ def create_table():
 @app.on_event("shutdown")
 async def shutdown():
     #drop users db
-    User.__table__.drop(bind=engine)
+    # User.__table__.drop(bind=engine)
+    pass
 
 if __name__ == '__main__':
     configuration()
