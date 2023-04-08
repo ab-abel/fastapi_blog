@@ -1,6 +1,6 @@
 from typing import Any
 from sqlalchemy.ext.declarative import declarative_base, declared_attr, as_declarative
-from db.schema.mixtime import TimeMixin
+
 
 from pydantic import BaseModel
 import datetime
