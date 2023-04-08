@@ -11,7 +11,9 @@ load_dotenv(find_dotenv())
 class Settings: 
     PROJECT_TITLE: str =os.environ.get("PROJECT_TITLE")
     PROJECT_VERSION: str = os.environ.get("PROJECT_VERSION")   
-    
+
+    SECRET_KEY: str =os.environ.get("SECRET_KEY")
+
     
     POSTGRES_USER :str =os.environ.get("POSTGRES_USER")
     # POSTGRES_USER :str =os.getenv("POSTGRES_USER","postgres")
