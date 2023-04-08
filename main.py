@@ -4,6 +4,8 @@ from router import base
 from core.config import settings
 from db.base import Base
 from db.session import engine
+# from sqlalchemy import MetaData
+from db.schema.users import User
 
 
 app = FastAPI()
@@ -14,9 +16,16 @@ def configuration():
 
 def router_config():
     app.include_router(base.router)
+    
 
 def create_table():
     Base.metadata.create_all(engine)
+
+
+@app.on_event("shutdown")
+async def shutdown():
+    #drop users db
+    User.__table__.drop(bind=engine)
 
 if __name__ == '__main__':
     configuration()
@@ -24,7 +33,6 @@ if __name__ == '__main__':
 else:
     configuration()
     
-
 @app.get("/")
 async def hello():
     print()

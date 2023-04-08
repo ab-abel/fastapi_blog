@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from core.config import settings
 from typing import Generator
 
-SQL_DB_URL =settings.POSTGRES_URL
+SQL_DB_URL = settings.POSTGRES_URL
 
 engine = create_engine(SQL_DB_URL)
 
