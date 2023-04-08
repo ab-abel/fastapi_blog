@@ -7,4 +7,4 @@ class HashPassword:
         return pwd_context.hash(password)
 
     def verify_hash(self, plain_pwd: str, hashed_pwd:str):
-        return pwd_context.verify(plain_pw ,hashed_pwd)
+        return pwd_context.verify(plain_pwd ,hashed_pwd)

@@ -1,4 +1,4 @@
-from db.model.users import RegisterUser
+from db.model.users import RegisterUser 
 from sqlalchemy.orm import Session
 from db.schema.users import User
 from core.pwd.hash import HashPassword
@@ -17,5 +17,4 @@ def register(user: RegisterUser, db:Session):
     db.commit()
     db.refresh(user)
     return user
-
 
