@@ -1,6 +1,5 @@
 import time
 import datetime
-
 from fastapi import HTTPException, status
 from jose import jwt, JWTError
 
@@ -17,7 +16,7 @@ def create_access_token(user:str)->str:
     token = jwt.encode(payload, settings.SECRET_KEY, algorithm="HS256")
     return token
 
-def verify_access_token(toke:str)->dict:
+def verify_access_token(token:str)->dict:
     try:
         data = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
 
@@ -28,7 +27,7 @@ def verify_access_token(toke:str)->dict:
                 status_code=status.HTTP_404_BAD_REQUEST,
                 details="No access token supplied"
             )
-        if datetime.utcnow() >datetime.utcfromtimestamp(expire):
+        if datetime.datetime.utcnow() >datetime.datetime.utcfromtimestamp(expire):
             raise HTTPException(
                 status_code =status.HTTP_403_FORBIDDEN,
                 detail="Token expired!"

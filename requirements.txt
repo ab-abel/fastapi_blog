@@ -24,4 +24,8 @@ httpx
 #token
 python-jose
 
+# form request
 python-multipart
+
+#set cookie
+fastapi-jwt-auth

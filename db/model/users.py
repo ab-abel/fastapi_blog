@@ -23,8 +23,18 @@ class LoginUser(BaseModel):
 class Profile(BaseModel):
     firstname: str
     lastname: str
-    email: EmailStr
-    is_active: bool
+    # email: EmailStr
+    # is_active: bool
 
     class config:
         orm_mode = True
+    
+class ForgetPassword(BaseModel):
+    oldPassword: str
+    newPassword: str
+    confirmPassword: str
+
+class ChangePassword(BaseModel):
+    oldPassword: str
+    newPassword: str
+    confirmPassword:str
