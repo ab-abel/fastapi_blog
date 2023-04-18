@@ -30,11 +30,13 @@ class Profile(BaseModel):
         orm_mode = True
     
 class ForgetPassword(BaseModel):
-    oldPassword: str
-    newPassword: str
-    confirmPassword: str
+    email: str
 
 class ChangePassword(BaseModel):
     oldPassword: str
     newPassword: str
     confirmPassword:str
+
+class ForgetPasswordForm(BaseModel):
+    newPassword: str
+    confirmPassword: str
