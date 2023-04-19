@@ -1,7 +1,7 @@
 from fastapi import Response, Request
 from typing import Optional
 import hashlib
-from core.num_convert import try_int
+# from core.num_convert import try_int
 
 auth_cookie_name = 'pypi_account'
 
@@ -33,3 +33,10 @@ def get_user_id_from_auth_cookie(request: Request) ->Optional[int]:
 
 def unset_cookie(response: Response):
     response.delete_cookie(auth_cookie_name)
+
+
+def try_int(text) -> int:
+    try:
+        return int(text)
+    except:
+        return 0
