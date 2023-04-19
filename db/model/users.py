@@ -42,10 +42,10 @@ class ChangePassword(BaseModel):
     newPassword: str
     confirmPassword:str
 
-<<<<<<< HEAD
+
 class ResetPassword(BaseModel):
-=======
+    newPassword: str
+    confirmPassword: str
 class ForgetPasswordForm(BaseModel):
->>>>>>> 09516af3805b18bdc2df2024d254d52aa1e7f037
     newPassword: str
     confirmPassword: str
