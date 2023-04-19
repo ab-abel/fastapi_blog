@@ -30,12 +30,8 @@ class Profile(BaseModel):
         orm_mode = True
     
 class ForgetPassword(BaseModel):
-<<<<<<< HEAD
     email: EmailStr
 
-=======
-    email: str
->>>>>>> 09516af3805b18bdc2df2024d254d52aa1e7f037
 
 class ChangePassword(BaseModel):
     oldPassword: str

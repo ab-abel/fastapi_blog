@@ -83,7 +83,6 @@ def change_password(auth_user_email, update_password:ChangePassword, db:Session)
         'message': 'Password change successful'
     }
 
-<<<<<<< HEAD
 def forget_pwd(user_email, request, db:Session):
 
     user_exist = db.query(User).filter(User.email == user_email.email)
@@ -146,17 +145,3 @@ def reset_pwd(token, user_data, db:Session):
     else:
         raise HTTPException(status_code=404, detail="password update not succesful")
 
-=======
-def forget_pwd(user_email:ForgetPassword):
-    user_exist = db.query(User).filter(User.email == user_email.email).scalar()
-    if not user_exist:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Email does not exist"
-        )
-#TODO
-'''
-    sent the email
-    with the 
-'''
->>>>>>> 09516af3805b18bdc2df2024d254d52aa1e7f037
