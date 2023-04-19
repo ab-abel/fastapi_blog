@@ -4,7 +4,7 @@
 This project serve as a simple login system for other application to interface. The database for which the login api is built is PostgreSQL.Also included is an SMTP module using yagmail which is aimed to assist with users who has forgotten their password. 
 
 ## Features in brief
-1. Reset forgoten password
+1. Reset forgotten password
 2. Change Password
 3. Register
 4. Login
