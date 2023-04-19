@@ -10,7 +10,7 @@ This project serve as a simple login system for other application to interface. 
 4. Login
 
 
-### Architecture
+## Architecture
 
 - core
     - pwd 
