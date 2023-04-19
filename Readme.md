@@ -1,7 +1,14 @@
 # Simple FastAPI Login project #
 
 ### Overview
-THis project serve as a simple login system for other application to interface. The database for the login is built with PostgreSQL.
+This project serve as a simple login system for other application to interface. The database for which the login api is built is PostgreSQL.Also included is an SMTP module using yagmail which is aimed to assist with users who has forgotten their password. 
+
+## Features in brief
+1. Reset forgoten password
+2. Change Password
+3. Register
+4. Login
+
 
 ### Architecture
 
@@ -39,6 +46,7 @@ THis project serve as a simple login system for other application to interface. 
 
 ## Routing Overview
 when a user request a url, the APIRouter model handels the route and make a call to the controller with in turn get the requires infomation from the database. 
+
 
 
 
