@@ -23,5 +23,8 @@ class Settings:
     POSTGRES_DB :str =os.getenv("POSTGRES_DB")
     POSTGRES_URL  = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
+#   SMTP
+    SMTP_user: str = os.getenv("SMTP_USER")
+    SMTP_pwd: str = os.getenv("SMTP_PWD")
 
 settings = Settings()

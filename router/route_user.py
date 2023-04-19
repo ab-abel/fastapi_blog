@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status,Depends, requests
-from db.model.users import RegisterUser, LoginUser, Profile, ChangePassword
+from db.model.users import *
 
 from db.controller.users import registerUser, loginUser, logoutUser, userController
 
@@ -66,3 +66,14 @@ def change_user_pwd(update_password:ChangePassword, db:Session = Depends(get_db)
 
     if not change_pwd:
         raise HTTPException(status_code=404, detail="change password not successful")
+
+@router.post('/forget_password')
+def forget_pwd(user:ForgetPassword, request:Request, db:Session=Depends(get_db)):
+    user_login = userController.forget_pwd(user, request, db)
+    # return user_login
+
+@router.patch('/forget_password/{token}')
+def reset_password(token, user:ResetPassword, db:Session = Depends(get_db)):
+    #TODO: Verify token
+    reset_user_details = userController.reset_pwd(token, user, db)
+    return reset_user_details

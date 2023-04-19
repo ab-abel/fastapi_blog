@@ -29,3 +29,6 @@ python-multipart
 
 #set cookie
 fastapi-jwt-auth
+
+#SMTP
+yagmail
