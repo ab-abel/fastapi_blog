@@ -1,0 +1,34 @@
+# initial dependency
+fastapi
+uvicorn
+
+# database
+psycopg2
+sqlalchemy
+sqlmodel
+
+# load env files
+python-dotenv
+
+# email validation
+pydantic[email]
+
+# pass validation
+passlib[bcrypt]
+
+# pytest 
+pytest
+requests
+httpx
+
+#token
+python-jose
+
+# form request
+python-multipart
+
+#set cookie
+fastapi-jwt-auth
+
+#SMTP
+yagmail
