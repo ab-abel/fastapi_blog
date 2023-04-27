@@ -1,8 +1,8 @@
 from fastapi import HTTPException, responses, status, Depends, Response
 
-from db.model.users import LoginUser
+from db.schema.users import LoginUser
 from sqlalchemy.orm import Session
-from db.schema.users import User
+from db.model.users import User
 from core.pwd.hash import HashPassword
 from core.token.token_handler import create_access_token
 

@@ -1,6 +1,6 @@
-from db.model.users import Profile, ChangePassword, ForgetPassword
+from db.schema.users import Profile, ChangePassword, ForgetPassword
 from sqlalchemy.orm import Session
-from db.schema.users import User
+from db.model.users import User
 from core.pwd.hash import HashPassword
 from fastapi import HTTPException, Request
 

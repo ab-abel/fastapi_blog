@@ -1,47 +1,20 @@
-from pydantic import BaseModel, EmailStr
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 
-class RegisterUser(BaseModel):
-    firstname: str
-    lastname: str
-    email: EmailStr
-    password: str
 
-    class config:
-        schema_extra = {
-            'example':{
-                'firstname':'John',
-                'lastname':'Doe',
-                'email':'John.doe@johndoe.com',
-                'password':'str12345'
-            }
-        }
 
-class LoginUser(BaseModel):
-    email:EmailStr
-    password: str
 
-class Profile(BaseModel):
-    firstname: str
-    lastname: str
-    # email: EmailStr
-    # is_active: bool
+from db.db_base import Base 
 
-    class config:
-        orm_mode = True
+
+class User(Base):
+    id = Column(Integer, primary_key=True, index=True)
+    firstname = Column(String, nullable=False)
+    lastname = Column(String, nullable=False)
+    email = Column(String, nullable=False, unique=True, index=False)
+    password =Column(String, nullable=False)
+    is_active = Column(Boolean, default=True)
+
     
-class ForgetPassword(BaseModel):
-    email: EmailStr
-
-
-class ChangePassword(BaseModel):
-    oldPassword: str
-    newPassword: str
-    confirmPassword:str
-
-
-class ResetPassword(BaseModel):
-    newPassword: str
-    confirmPassword: str
-class ForgetPasswordForm(BaseModel):
-    newPassword: str
-    confirmPassword: str
+    
+    

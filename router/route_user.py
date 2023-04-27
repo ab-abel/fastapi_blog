@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status,Depends, requests
-from db.model.users import *
+from db.schema.users import *
 
 from db.controller.users import registerUser, loginUser, logoutUser, userController
 

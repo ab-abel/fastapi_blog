@@ -5,7 +5,7 @@ from core.config import settings
 from db.base import Base
 from db.session import engine
 # from sqlalchemy import MetaData
-from db.schema.users import User
+from db.model.users import User
 
 
 app = FastAPI()
