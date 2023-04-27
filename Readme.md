@@ -1,13 +1,16 @@
-# Simple FastAPI Login project #
+# Simple FastAPI Blog #
 
 ### Overview
-This project serve as a simple login system for other application to interface. The database for which the login api is built is PostgreSQL.Also included is an SMTP module using yagmail which is aimed to assist with users who has forgotten their password. 
+This is a simple blog backend project, using fastapi. the backend to the blog site being PostgreSQL server. 
 
 ## Features in brief
-1. Reset forgotten password
+1. login
 2. Change Password
 3. Register
 4. Login
+5. create Post
+6. view Post
+7. comment features.
 
 
 ## Architecture
